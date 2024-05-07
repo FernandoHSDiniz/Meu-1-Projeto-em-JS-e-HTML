@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formataSudoku.css">
+    <title>Jogo Sudoku</title>
+    <style>
+        .botao {
+            margin-top: 18%;
+            margin-left: 70%;
+            width: 50%;
+        }
+        
+        .verd {
+            margin-top: 100%;
+            margin-left: 70%;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: x-large;
+            margin: fixed;
+            color: green;
+        }
+        
+        .q1 {
+            background-color: brown;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+        }
+        
+        .q2 {
+            background-color: blue;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+        }
+        
+        .q3 {
+            background-color: black;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+        }
+        
+        .xy {
+            position: fixed;
+            left: 45%;
+            top: 50%;
+        }
+    </style>
+</head>
+<body>
+    <img src="fundo japones.jpg" alt="Imagem em Tela Cheia" class="foto">
+    <table class="tablenav">
+        <tr>
+            <td class="tdnav"><a href="/paginaPrincipal.html" target="_self">Página Inicial</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs.html" target="_self">Jogo 1</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs2.html" target="_self">Jogo 2</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs3.html" target="_self">Jogo 3</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs4.html" target="_self">Jogo 4</a></td>
+           
+        </tr>
+    </table>
+    <main>
+        <div class="xyz">
+            <p>Preencha os campos abaixo com números de 1 a 9</p>
+            <p>Para que cada linha, coluna e diagonal some 15!</p>
+            <div class="xy">
+                <input type="number" id="a" name="a" size="1" min="1" max="9" class="q1">
+                <input type="number" id="b" name="b" size="1" min="1" max="9" class="q2">
+                <input type="number" id="c" name="c" size="1" min="1" max="9" class="q3">
+                <br>
+                <input type="number" id="d" name="d" size="1" min="1" max="9" class="q1">
+                <input type="number" id="e" name="e" size="1" min="1" max="9" class="q2">
+                <input type="number" id="f" name="f" size="1" min="1" max="9" class="q3">
+                <br>
+                <input type="number" id="g" name="g" size="1" min="1" max="9" class="q1">
+                <input type="number" id="h" name="h" size="1" min="1" max="9" class="q2">
+                <input type="number" id="i" name="i" size="1" min="1" max="9" class="q3">
+                <br>
+                <input type="submit" value="Testar" onclick="jogo()">
+                <input type="reset" value="Limpar" onclick="limparCampos()">
+            </div>
+        </div>
+        <div id="resu" class="abc"></div>
+        <script>
+            function jogo() {
+                var a = parseInt(document.getElementById("a").value);
+                var b = parseInt(document.getElementById("b").value);
+                var c = parseInt(document.getElementById("c").value);
+                var d = parseInt(document.getElementById("d").value);
+                var e = parseInt(document.getElementById("e").value);
+                var f = parseInt(document.getElementById("f").value);
+                var g = parseInt(document.getElementById("g").value);
+                var h = parseInt(document.getElementById("h").value);
+                var i = parseInt(document.getElementById("i").value);
+
+                if ((a + b + c) == 15 && (d + e + f) == 15 && (g + h + i) == 15 && (a + d + g) == 15 && (b + e + h) == 15 && (c + f + i) == 15 && (a + e + i) == 15 && (c + e + g) == 15 && a != b) {
+                    var jogo = "<p class='verd'>Você Conseguiu!</p><a href='/Jogo Sudoku/jogojs2.html' target='_self'><button class='botao'>Próxima Fase</button></a>";
+                    document.querySelector('#resu').innerHTML = jogo;
+                }
+            }
+
+            function limparCampos() {
+                document.getElementById('a').value = '';
+                document.getElementById('b').value = '';
+                document.getElementById('c').value = '';
+                document.getElementById('d').value = '';
+                document.getElementById('e').value = '';
+                document.getElementById('f').value = '';
+                document.getElementById('g').value = '';
+                document.getElementById('h').value = '';
+                document.getElementById('i').value = '';
+            }
+        </script>
+    </main>
+</body>
+</html>

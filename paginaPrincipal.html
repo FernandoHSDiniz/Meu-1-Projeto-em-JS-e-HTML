@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Configurações do documento -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- Estilos externos -->
+    <link rel="stylesheet" href="formata.css"> 
+    
+    <!-- Estilos internos -->
+    <style>
+        /* Adicionando um estilo para ocultar a lista inicialmente */
+        .lista-contatos {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+          
+    </header>
+    
+    <!-- Navegação -->
+    <nav>
+        <table class="tablenav">
+            <tr>
+                <!-- Links de navegação -->
+                <td button class="tdnav"><a href="/JogoAdivinhaNumero/JogoAdivinhaNumero.html" target="_self">Número Secreto</a></td>
+                <td class="tdnav"><a href="/Jogo Sudoku/jogojs.html" target="_self">Sudoku</a></td>
+                <td class="tdnav"><a href="/JogoPingPong/Ping-Pong.html" target="_self">Ping-Pong</a></td>
+                <td class="tdnav">
+                    <!-- Adicionando um link para abrir e fechar a lista de contatos -->
+                    <a style="color: black;text-align:center;" href="#" id="link-contato">Contato</a>
+                    <!-- Lista de contatos (inicialmente oculta) -->
+                    <ul class="lista-contatos">
+                        <li><a href="https://www.linkedin.com/in/fernando-henrique97/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/fernando_diniz97/" target="_blank">Instagram</a></li>
+                        <li><a href="https://github.com/FernandoHSDiniz/" target="_blank">GitHub</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </nav>
+    
+    <!-- Conteúdo principal -->
+    <main>
+      
+    </main>
+    
+    <!-- Rodapé -->
+    <footer>
+        
+    </footer>
+
+    <!-- Imagem -->
+    <img src="capaInicial.gif" alt="Imagem em Tela Cheia" class="foto">
+
+    <!-- Script -->
+    <script>
+        // Função para mostrar ou ocultar a lista de contatos quando o link "Contato" é clicado
+        document.getElementById('link-contato').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevenir o comportamento padrão do link
+            
+            var listaContatos = document.querySelector('.lista-contatos');
+            // Alternar entre exibir e ocultar a lista de contatos
+            if (listaContatos.style.display === 'none') {
+                listaContatos.style.display = 'block';
+            } else {
+                listaContatos.style.display = 'none';
+            }
+        });
+
+        // Funções de redirecionamento para os jogos
+        function JogoAdivinhaNumero() {
+            window.location.href = "/JogoAdivinhaNumero/JogoAdivinhaNumero.html";
+        }
+        function JogoSudoku() {
+            window.location.href = "/Jogo Sudoku/jogojs.html";
+        }
+        function JogoPingPong() {
+            window.location.href = "/JogoPingPong/Ping-Pong.html";
+        }
+    </script>
+</body>
+</html>

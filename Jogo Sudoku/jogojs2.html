@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formataSudoku.css"> 
+    <title>Sudoku2</title>
+    <style>
+        .botao {
+            margin-top: 20%;
+            margin-left: 70%;
+            width: 50%;
+        }
+        
+        .verd {
+            margin-top: 112%;
+            margin-left: 70%;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: x-large;
+            margin: fixed;
+            color: green;
+        }
+        
+        .xy {
+            position: fixed;
+            left: 40%;
+            top: 50%;
+        }
+        
+        .q1 {
+            background-color: rgb(43, 245, 231);
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .q2 {
+            background-color: rgb(168, 243, 193);
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .q3 {
+            background-color: rgb(8, 157, 184);
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .q4 {
+            background-color: rgb(68, 145, 24);
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .bt {
+            background-color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <img src="fundo japones.jpg" alt="Imagem em Tela Cheia" class="foto">
+
+    <table class="tablenav">
+        <tr>
+            <td class="tdnav"><a href="/paginaPrincipal.html" target="_self">Página Inicial</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs.html" target="_self">Jogo 1</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs2.html" target="_self">Jogo 2</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs3.html" target="_self">Jogo 3</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs4.html" target="_self">Jogo 4</a></td>
+           
+        </tr>
+    </table>
+    <main>
+        <div class="xyz">
+            <p>Preencha os campo abaixo com números de 1 a 4.</P> 
+            <p>Para que cada linha, coluna, diagonal e cada quadrante
+            tenha os números 1, 2, 3 e 4!</p>
+            <div class="xy">
+                <input type="number" name="a1" size="1" min="1" max="4"  class="q1">
+                <input type="number" name="b1" size="1" min="1" max="4"  class="q1">
+                <input type="number" name="c1" size="1" min="1" max="4"  class="q2">
+                <input type="number" name="d1" size="1" min="1" max="4"  class="q2">
+                <br>
+                <input type="number" name="a2" size="1" min="1" max="4"  class="q1">
+                <input type="number" name="b2" size="1" min="1" max="4"  class="q1">
+                <input type="number" name="c2" size="1" min="1" max="4"  class="q2">
+                <input type="number" name="d2" size="1" min="1" max="4"  class="q2">
+                <br>
+                <input type="number" name="a3" size="1" min="1" max="4"  class="q3">
+                <input type="number" name="b3" size="1" min="1" max="4"  class="q3">
+                <input type="number" name="c3" size="1" min="1" max="4"  class="q4">
+                <input type="number" name="d3" size="1" min="1" max="4"  class="q4">
+                <br>
+                <input type="number" name="a4" size="1" min="1" max="4"  class="q3">
+                <input type="number" name="b4" size="1" min="1" max="4"  class="q3">
+                <input type="number" name="c4" size="1" min="1" max="4"  class="q4">
+                <input type="number" name="d4" size="1" min="1" max="4"  class="q4">
+                <br>
+                <input type="submit" value="Testar" class="bt" onclick="jogo()">
+                <input type="reset" value="Limpar" class="bt" onclick="limparCampos()">
+            </div>
+        </div>
+        <div id="resu" class="abc"></div>
+        <script>
+            function jogo() {
+                var a1 = parseInt(document.getElementsByName("a1")[0].value);
+                var b1 = parseInt(document.getElementsByName("b1")[0].value);
+                var c1 = parseInt(document.getElementsByName("c1")[0].value);
+                var d1 = parseInt(document.getElementsByName("d1")[0].value);
+
+                var a2 = parseInt(document.getElementsByName("a2")[0].value);
+                var b2 = parseInt(document.getElementsByName("b2")[0].value);
+                var c2 = parseInt(document.getElementsByName("c2")[0].value);
+                var d2 = parseInt(document.getElementsByName("d2")[0].value);
+               
+                var a3 = parseInt(document.getElementsByName("a3")[0].value);
+                var b3 = parseInt(document.getElementsByName("b3")[0].value);
+                var c3 = parseInt(document.getElementsByName("c3")[0].value);
+                var d3 = parseInt(document.getElementsByName("d3")[0].value);
+
+                var a4 = parseInt(document.getElementsByName("a4")[0].value);
+                var b4 = parseInt(document.getElementsByName("b4")[0].value);
+                var c4 = parseInt(document.getElementsByName("c4")[0].value);
+                var d4 = parseInt(document.getElementsByName("d4")[0].value);
+
+                if ((a1 + b1 + c1 + d1) == 10 && (a2 + b2 + c2 + d2) == 10 && (a3 + b3 + c3 + d3) == 10 && (a4 + b4 + c4 + d4) == 10 && (a1 + a2 + a3 + a4) == 10 && (b1 + b2 + b3 + b4) == 10 && (c1 + c2 + c3 + c4) == 10 && (d1 + d2 + d3 + d4) == 10 && (a1 + b1 + a2 + b2) == 10 && (a3 + b3 + a4 + b4) == 10 && (c1 + d1 + c2 + d2) == 10 && (c3 + d3 + c4 + d4) == 10 && (a1 + b2 + c3 + d4) == 10 && (a4 + b3 + c2 + d1) == 10) {
+                    var jogo = "<p class='verd'>Você Conseguiu!</p><a href='/Jogo Sudoku/jogojs3.html' target='_self'><button class='botao'>Próxima Fase</button></a>";
+                    document.querySelector('#resu').innerHTML = jogo;
+                }
+            }
+
+            function limparCampos() {
+                document.getElementsByName('a1')[0].value = '';
+                document.getElementsByName('b1')[0].value = '';
+                document.getElementsByName('c1')[0].value = '';
+                document.getElementsByName('d1')[0].value = '';
+
+                document.getElementsByName('a2')[0].value = '';
+                document.getElementsByName('b2')[0].value = '';
+                document.getElementsByName('c2')[0].value = '';
+                document.getElementsByName('d2')[0].value = '';
+
+                document.getElementsByName('a3')[0].value = '';
+                document.getElementsByName('b3')[0].value = '';
+                document.getElementsByName('c3')[0].value = '';
+                document.getElementsByName('d3')[0].value = '';
+
+                document.getElementsByName('a4')[0].value = '';
+                document.getElementsByName('b4')[0].value = '';
+                document.getElementsByName('c4')[0].value = '';
+                document.getElementsByName('d4')[0].value = '';
+            }
+        </script>
+    </main>
+</body>
+</html>

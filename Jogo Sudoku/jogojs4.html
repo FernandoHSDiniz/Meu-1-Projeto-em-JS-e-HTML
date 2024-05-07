@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formataSudoku.css"> 
+    <title>Sudoku4</title>
+    <style>
+
+.botao{
+margin-top: 15%;
+margin-left: 120%;
+width: 60%;
+
+}
+.verd{
+margin-top: 125%;
+margin-left: 120%;
+font-family: 'Courier New', Courier, monospace;
+font-size: x-large;
+margin: fixed;
+color: green;
+
+ }
+
+.xy{
+    position: fixed;
+    left: 30%;
+    top: 40%;
+}
+.q1{
+    background-color: rgb(40, 200, 255);
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+}
+.q2{
+    background-color: rgb(40, 100, 255);
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+}
+.bt{
+    background-color: white;
+    font-weight: bold;
+}
+  
+
+    
+    </style>
+</head>
+<body>
+
+    <img src="fundo japones.jpg" alt="Imagem em Tela Cheia" class="foto">
+
+    <table class="tablenav">
+        <tr>
+            <td class="tdnav"><a href="/paginaPrincipal.html" target="_self">Página Inicial</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs.html" target="_self">Jogo 1</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs2.html" target="_self">Jogo 2</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs3.html" target="_self">Jogo 3</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs4.html" target="_self">Jogo 4</a></td>
+           
+    </table>
+    <main>
+        <div class="xyz">
+        <p>Preencha os campo abaixo com números de 1 a 9.
+        <p>Para que cada linha, coluna, e cada quadrante
+        tenha os números de 1 a 9!</p>
+            <div class="xy">
+        <input type="number" name="a1" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="b1" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="c1" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="d1" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="e1" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="f1" size="1" min="1" max="9"  class="q2">
+        <input type="text" name="g1" size="3" value="7" disabled class="q1">
+        <input type="number" name="h1" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="i1" size="1" min="1" max="9"  class="q1">
+        <br>
+        <input type="number" name="a2" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="b2" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="c2" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="d2" size="1" min="1" max="9"  class="q2">
+        <input type="text" name="e2" size="3" value="8" disabled  class="q2">
+        <input type="number" name="f2" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="g2" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="h2" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="i2" size="1" min="1" max="9"  class="q1">
+        <br>
+        <input type="number" name="a3" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="b3" size="1" min="1" max="9"  class="q1">
+        <input type="text" name="c3" size="3" value="9" disabled  class="q1">
+        <input type="number" name="d3" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="e3" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="f3" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="g3" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="h3" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="i3" size="1" min="1" max="9"  class="q1">
+        <br>
+        <input type="number" name="a4" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="b4" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="c4" size="1" min="1" max="9"  class="q2">
+        <input type="text" name="d4" size="3" value="5" disabled  class="q1">
+        <input type="number" name="e4" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="f4" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="g4" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="h4" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="i4" size="1" min="1" max="9"  class="q2">
+        <br>
+        <input type="number" name="a5" size="1" min="1" max="9"  class="q2">
+        <input type="text" name="b5" size="3" value="6" disabled  class="q2">
+        <input type="number" name="c5" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="d5" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="e5" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="f5" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="g5" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="h5" size="1" min="1" max="9"  class="q2">
+        <input type="text" name="i5" size="3" value="4" disabled  class="q2">
+        <br>
+        <input type="number" name="a6" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="b6" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="c6" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="d6" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="e6" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="f6" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="g6" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="h6" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="i6" size="1" min="1" max="9"  class="q2">
+        <br>
+        <input type="text" name="a7" size="3" value="3" disabled  class="q1">
+        <input type="number" name="b7" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="c7" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="d7" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="e7" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="f7" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="g7" size="1" min="1" max="9"  class="q1">
+        <input type="text" name="h7" size="3" value="1" disabled class="q1">
+        <input type="number" name="i7" size="1" min="1" max="9"  class="q1">
+        <br>
+        <input type="number" name="a8" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="b8" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="c8" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="d8" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="e8" size="1" min="1" max="9"  class="q2">
+        <input type="text" name="f8" size="3" value="2" disabled  class="q2">
+        <input type="number" name="g8" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="h8" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="i8" size="1" min="1" max="9"  class="q1">
+        <br>
+        <input type="number" name="a9" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="b9" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="c9" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="d9" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="e9" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="f9" size="1" min="1" max="9"  class="q2">
+        <input type="number" name="g9" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="h9" size="1" min="1" max="9"  class="q1">
+        <input type="number" name="i9" size="1" min="1" max="9"  class="q1">
+        <br>
+
+
+        
+
+       
+        <br>
+        <input type="submit" value="Testar" class="bt" onclick="jogo()">
+        <input type="button" value="Limpar" class="bt" onclick="limparCampos()">
+        </div>
+        </div>
+
+
+        <div id="resu" class="abc"></div>
+
+        <script>
+                function jogo() {
+                // Sua função de validação do jogo aqui
+            }
+            function limparCampos() {
+                var inputs = document.querySelectorAll('input[type="number"]');
+                inputs.forEach(function(input) {
+                    input.value = '';
+                });
+            }
+            function jogo(){
+
+                var a1 = parseInt(document.getElementsByName("a1")[0].value);
+                var b1 = parseInt(document.getElementsByName("b1")[0].value);
+                var c1 = parseInt(document.getElementsByName("c1")[0].value);
+                var d1 = parseInt(document.getElementsByName("d1")[0].value);
+                var e1 = parseInt(document.getElementsByName("e1")[0].value);
+                var f1 = parseInt(document.getElementsByName("f1")[0].value);
+                var g1 = parseInt(7);
+                var h1 = parseInt(document.getElementsByName("h1")[0].value);
+                var i1 = parseInt(document.getElementsByName("i1")[0].value);
+
+                var a2 = parseInt(document.getElementsByName("a2")[0].value);
+                var b2 = parseInt(document.getElementsByName("b2")[0].value);
+                var c2 = parseInt(document.getElementsByName("c2")[0].value);
+                var d2 = parseInt(document.getElementsByName("d2")[0].value);
+                var e2 = parseInt(8);
+                var f2 = parseInt(document.getElementsByName("f2")[0].value);
+                var g2 = parseInt(document.getElementsByName("g2")[0].value);
+                var h2 = parseInt(document.getElementsByName("h2")[0].value);
+                var i2 = parseInt(document.getElementsByName("i2")[0].value);
+
+                var a3 = parseInt(document.getElementsByName("a3")[0].value);
+                var b3 = parseInt(document.getElementsByName("b3")[0].value);
+                var c3 = parseInt(9);
+                var d3 = parseInt(document.getElementsByName("d3")[0].value);
+                var e3 = parseInt(document.getElementsByName("e3")[0].value);
+                var f3 = parseInt(document.getElementsByName("f3")[0].value);
+                var g3 = parseInt(document.getElementsByName("g3")[0].value);
+                var h3 = parseInt(document.getElementsByName("h3")[0].value);
+                var i3 = parseInt(document.getElementsByName("i3")[0].value);
+
+                var a4 = parseInt(document.getElementsByName("a4")[0].value);
+                var b4 = parseInt(document.getElementsByName("b4")[0].value);
+                var c4 = parseInt(document.getElementsByName("c4")[0].value);
+                var d4 = parseInt(5);
+                var e4 = parseInt(document.getElementsByName("e4")[0].value);
+                var f4 = parseInt(document.getElementsByName("f4")[0].value);
+                var g4 = parseInt(document.getElementsByName("g4")[0].value);
+                var h4 = parseInt(document.getElementsByName("h4")[0].value);
+                var i4 = parseInt(document.getElementsByName("i4")[0].value);
+
+                var a5 = parseInt(document.getElementsByName("a5")[0].value);
+                var b5 = parseInt(6);
+                var c5 = parseInt(document.getElementsByName("c5")[0].value);
+                var d5 = parseInt(document.getElementsByName("d5")[0].value);
+                var e5 = parseInt(document.getElementsByName("e5")[0].value);
+                var f5 = parseInt(document.getElementsByName("f5")[0].value);
+                var g5 = parseInt(document.getElementsByName("g5")[0].value);
+                var h5 = parseInt(document.getElementsByName("h5")[0].value);
+                var i5 = parseInt(4);
+
+                var a6 = parseInt(document.getElementsByName("a6")[0].value);
+                var b6 = parseInt(document.getElementsByName("b6")[0].value);
+                var c6 = parseInt(document.getElementsByName("c6")[0].value);
+                var d6 = parseInt(document.getElementsByName("d6")[0].value);
+                var e6 = parseInt(document.getElementsByName("e6")[0].value);
+                var f6 = parseInt(document.getElementsByName("f6")[0].value);
+                var g6 = parseInt(document.getElementsByName("g6")[0].value);
+                var h6 = parseInt(document.getElementsByName("h6")[0].value);
+                var i6 = parseInt(document.getElementsByName("i6")[0].value);
+
+                var a7 = parseInt(3);
+                var b7 = parseInt(document.getElementsByName("b7")[0].value);
+                var c7 = parseInt(document.getElementsByName("c7")[0].value);
+                var d7 = parseInt(document.getElementsByName("d7")[0].value);
+                var e7 = parseInt(document.getElementsByName("e7")[0].value);
+                var f7 = parseInt(document.getElementsByName("f7")[0].value);
+                var g7 = parseInt(document.getElementsByName("g7")[0].value);
+                var h7 = parseInt(1);
+                var i7 = parseInt(document.getElementsByName("i7")[0].value);
+
+                var a8 = parseInt(document.getElementsByName("a8")[0].value);
+                var b8 = parseInt(document.getElementsByName("b8")[0].value);
+                var c8 = parseInt(document.getElementsByName("c8")[0].value);
+                var d8 = parseInt(document.getElementsByName("d8")[0].value);
+                var e8 = parseInt(document.getElementsByName("e8")[0].value);
+                var f8 = parseInt(2);
+                var g8 = parseInt(document.getElementsByName("g8")[0].value);
+                var h8 = parseInt(document.getElementsByName("h8")[0].value);
+                var i8 = parseInt(document.getElementsByName("i8")[0].value);
+
+                var a9 = parseInt(document.getElementsByName("a9")[0].value);
+                var b9 = parseInt(document.getElementsByName("b9")[0].value);
+                var c9 = parseInt(document.getElementsByName("c9")[0].value);
+                var d9 = parseInt(document.getElementsByName("d9")[0].value);
+                var e9 = parseInt(document.getElementsByName("e9")[0].value);
+                var f9 = parseInt(document.getElementsByName("f9")[0].value);
+                var g9 = parseInt(document.getElementsByName("g9")[0].value);
+                var h9 = parseInt(document.getElementsByName("h9")[0].value);
+                var i9 = parseInt(document.getElementsByName("i9")[0].value);
+
+              
+                if((a1 + b1 + c1 + d1 + e1 + f1 + g1 + h1 + i1) == 45 && (a2 + b2 + c2 + d2 + e2 + f2 + g2 + h2 + i2) == 45 && (a3 + b3 + c3 + d3 + e3 + f3 + g3 + h3 + i3) == 45 && (a4 + b4 + c4 + d4 + e4 + f4 + g4 + h4 + i4) == 45 && (a5 + b5 + c5 + d5 + e5 + f5 + g5 + h5 + i5) == 45 && (a6 + b6 + c6 + d6 + e6 + f6 + g6 + h6 + i6) == 45 && (a7 + b7 + c7 + d7 + e7 + f7 + g7 + h7 + i7) == 45 && (a8 + b8 + c8 + d8 + e8 + f8 + g8 + h8 + i8) == 45 && (a9 + b9 + c9 + d9 + e9 + f9 + g9 + h9 + i9) == 45 && (a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9) == 45 && (b1 + b2 + b3 + b4 + b5 + b6 + b7 + b8 + b9) == 45 &&  (c1 + c2 + c3 + c4 + c5 + c6 + c7 + c8 + c9) == 45 && (d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9) == 45 && (e1 + e2 + e3 + e4 + e5 + e6 + e7 + e8 + e9) == 45 && (f1 + f2 + f3 + f4 + f5 + f6 + f7 + f8 + f9) == 45 && (g1 + g2 + g3 + g4 + g5 + g6 + g7 + g8 + g9) == 45 && (h1 + h2 + h3 + h4 + h5 + h6 + h7 + h8 + h9) == 45 && (i1 + i2 + i3 + i4 + i5 + i6 + i7 + i8 + i9) == 45 && (a1 + a2 + a3 + b1 + b2 + b3 + c1 + c2 + c3) == 45 && (a4 + a5 + a6 + b4 + b5 + b6 + c4 + c5 + c6) == 45 && (a7 + a8 + a9 + b7 + b8 + b9 + c7 + c8 + c9) == 45 && (d1 + d2 + d3 + e1 + e2 + e3 + f1 + f2 + f3) == 45 && (d4 + d5 + d6 + e4 + e5 + e6 + f4 + f5 + f6) == 45 && (d7 + d8 + d9 + e7 + e8 + e9 + f7 + f8 + f9) == 45 && (g1 + g2 + g3 + h1 + h2 + h3 + i1 + i2 + i3) == 45 && (g4 + g5 + g6 + h4 + h5 + h6 + i4 + i5 + i6) == 45 && (g7 + g8 + g9 + h7 + h8 + h9 + i7 + i8 + i9) == 45){
+                    var jogo = "<p class='verd'>Você Conseguiu!</p><a href='/PaginaInicial/paginaPrincipal.html' target='_self'><button class='botao'>Voltar Pagina Principal</button></a>";
+                    document.querySelector('#resu').innerHTML = jogo;
+                }
+               
+            }
+
+        </script>
+
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* para evitar que a barra de rolagem apareça */
+}
+
+header, nav, main, footer {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    z-index: 2; /* garantindo que os elementos fiquem acima da imagem */
+}
+
+header {
+    height: 10%;
+    top: 0;
+}
+
+nav {
+    height: 8%;
+    top: 10%;
+}
+
+main {
+    overflow: auto;
+    height: 72%;
+    top: 18%;
+    padding-top: 20px; /* para compensar a altura do cabeçalho */
+}
+
+footer {
+    height: 10%;
+    bottom: 0;
+}
+
+.tablenav {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:red ; /* Mudando para fundo transparente */
+    z-index: 2; /* garantindo que a navegação fique acima da imagem */
+    text-align: center; /* Centralizando os itens */
+}
+
+.tdnav {
+    display: inline-block; /* Permitindo que fiquem lado a lado */
+    padding: 15px 30px; /* Adicionando espaçamento interno */
+    margin-right: 30px; /* Adicionando margem à direita */
+}
+
+.tdnav:last-child {
+    margin-right: 0; /* Removendo margem do último item */
+}
+
+.tdnav a {
+    color: white; /* Mudando a cor do texto */
+    text-decoration: none; /* Removendo sublinhado do link */
+    font-weight: bold; /* Adicionando negrito */
+}
+
+.tdnav:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Adicionando uma cor de fundo transparente ao passar o mouse */
+}
+
+.xyz {
+    
+    position: fixed;
+    width: 90%;
+    left: 5%;
+    text-align: center;
+    font-size: xx-large;
+    top: 20%;
+}
+.xy{
+    
+  justify-content: center;
+}
+
+.abc {
+
+    position: fixed;
+    left: 55%;
+    top: 20%;
+}
+
+.verd {
+    font-size: xx-large;
+    color: green;
+    margin-left: 10%;
+    margin-top: 99%;
+}
+
+.foto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+p {
+    font-weight: bolder;
+}
+
+a:link {
+    color: rgb(0, 247, 255);
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 150%;
+    font-family: 'Press Start 2P', cursive; /* Adicionando a fonte Press Start 2P */
+}
+
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 150%;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adicionando sombra */
+    padding: 5px 10px; /* Adicionando preenchimento para criar uma caixa clicável */
+    font-family: 'Montserrat', sans-serif; /* Adicionando a fonte Montserrat */
+}
+
+a:hover {
+    color: rgb(128, 0, 0);
+    background-color: transparent;
+    text-decoration: underline;
+    font-size: large;
+}
+
+a:active {
+    color: lightgreen;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+h1 {
+    color: gold;
+}
+
+h3 {
+    color: blue;
+    font-size: x-large;
+}
+
+iframe {
+    left: 45%;
+    top: 40%;
+    position: fixed;
+}

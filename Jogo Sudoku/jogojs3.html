@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formataSudoku.css"> 
+
+    <title>Suduku3</title>
+    <style>
+        .botao {
+            margin-top: 20%;
+            margin-left: 70%;
+            width: 50%;
+        }
+        
+        .verd {
+            margin-top: 131%;
+            margin-left: 70%;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: x-large;
+            margin: fixed;
+            color: green;
+        }
+        
+        .xy {
+            position: fixed;
+            left: 40%;
+            top: 50%;
+        }
+        
+        .tr {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        
+        .fm {
+            text-align: center;
+            font-weight: bold;
+            background-color: aqua;
+        }
+        
+        .fn {
+            text-align: center;
+            font-weight: bold;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <img src="fundo japones.jpg" alt="Imagem em Tela Cheia" class="foto">
+
+    <table class="tablenav">
+        <tr>
+            <td class="tdnav"><a href="/paginaPrincipal.html" target="_self">Página Inicial</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs.html" target="_self">Jogo 1</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs2.html" target="_self">Jogo 2</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs3.html" target="_self">Jogo 3</a></td>
+            <td class="tdnav"><a href="/Jogo Sudoku/jogojs4.html" target="_self">Jogo 4</a></td>
+          
+        </tr>
+    </table>
+    <main>
+        <div class="xyz">
+            <p>Preencha os campo abaixo com números de 1 a 5.</p>
+            <p>Para que cada linha, coluna, diagonal tenha os números 1, 2, 3, 4 e 5!</p>
+            <div class="xy">
+                <input type="number" name="a1" size="1" min="1" max="5" class="fn">
+                <input type="number" name="b1" size="1" min="1" max="5" class="fn">
+                <input type="number" name="c1" size="1" min="1" max="5" class="fn">
+                <input type="number" name="d1" size="1" min="1" max="5" class="fn">
+                <input type="text" name="e1" size="3" value="2" disabled class="tr">
+                <br>
+                <input type="number" name="a2" size="1" min="1" max="5" class="fn">
+                <input type="number" name="b2" size="1" min="1" max="5" class="fn">
+                <input type="number" name="c2" size="1" min="1" max="5" class="fn">
+                <input type="text" name="d2" size="3" value="1" disabled class="tr">
+                <input type="number" name="e2" size="1" min="1" max="5" class="fm">
+                <br>
+                <input type="number" name="a3" size="1" min="1" max="5" class="fn">
+                <input type="number" name="b3" size="1" min="1" max="5" class="fn">
+                <input type="text" name="c3" size="3" value="3" disabled class="tr">
+                <input type="number" name="d3" size="1" min="1" max="5" class="fm">
+                <input type="number" name="e3" size="1" min="1" max="5" class="fm">
+                <br>
+                <input type="number" name="a4" size="1" min="1" max="5" class="fn">
+                <input type="text" name="b4" size="3" value="5" disabled class="tr">
+                <input type="number" name="c4" size="1" min="1" max="5" class="fm">
+                <input type="number" name="d4" size="1" min="1" max="5" class="fm">
+                <input type="number" name="e4" size="1" min="1" max="5" class="fm">
+                <br>
+                <input type="text" name="a5" size="3" value="4" disabled class="tr">
+                <input type="number" name="b5" size="1" min="1" max="5" class="fm">
+                <input type="number" name="c5" size="1" min="1" max="5" class="fm">
+                <input type="number" name="d5" size="1" min="1" max="5" class="fm">
+                <input type="number" name="e5" size="1" min="1" max="5" class="fm">
+                <br>
+                <input type="submit" value="Testar" onclick="jogo()">
+                <input type="reset" value="Limpar" class="bt" onclick="limparCampos()">
+            </div>
+        </div>
+        <div id="resu" class="abc"></div>
+        <script>
+            function jogo() {
+                var a1 = parseInt(document.getElementsByName("a1")[0].value);
+                var b1 = parseInt(document.getElementsByName("b1")[0].value);
+                var c1 = parseInt(document.getElementsByName("c1")[0].value);
+                var d1 = parseInt(document.getElementsByName("d1")[0].value);
+                var e1 = parseInt(2);
+
+                var a2 = parseInt(document.getElementsByName("a2")[0].value);
+                var b2 = parseInt(document.getElementsByName("b2")[0].value);
+                var c2 = parseInt(document.getElementsByName("c2")[0].value);
+                var d2 = parseInt(1);
+                var e2 = parseInt(document.getElementsByName("e2")[0].value);
+
+                var a3 = parseInt(document.getElementsByName("a3")[0].value);
+                var b3 = parseInt(document.getElementsByName("b3")[0].value);
+                var c3 = parseInt(3);
+                var d3 = parseInt(document.getElementsByName("d3")[0].value);
+                var e3 = parseInt(document.getElementsByName("e3")[0].value);
+
+                var a4 = parseInt(document.getElementsByName("a4")[0].value);
+                var b4 = parseInt(5);
+                var c4 = parseInt(document.getElementsByName("c4")[0].value);
+                var d4 = parseInt(document.getElementsByName("d4")[0].value);
+                var e4 = parseInt(document.getElementsByName("e4")[0].value);
+
+                var a5 = parseInt(4);
+                var b5 = parseInt(document.getElementsByName("b5")[0].value);
+                var c5 = parseInt(document.getElementsByName("c5")[0].value);
+                var d5 = parseInt(document.getElementsByName("d5")[0].value);
+                var e5 = parseInt(document.getElementsByName("e5")[0].value);
+
+                if((a1 + b1 + c1 + d1 + e1) == 15 && (a2 + b2 + c2 + d2 + e2) == 15 && (a3 + b3 + c3 + d3 + e3) == 15 && (a4 + b4 + c4 + d4 + e4) == 15 && (a5 + b5 + c5 + d5 + e5) == 15 && (a1 + a2 + a3 + a4 + a5) == 15 && (b1 + b2 + b3 + b4 + b5) == 15 && (c1 + c2 + c3 + c4 + c5) == 15 && (d1 + d2 + d3 + d4 + d5) == 15 && (e1 + e2 + e3 + e4 + e5) == 15 && (a1 + b2 + c3 + d4 + e5) == 15 && (a5 + b4 + c3 + d2 + e1) == 15) {
+                    var jogo = "<p class='verd'>Você Conseguiu!</p><a href='/Jogo Sudoku/jogojs4.html' target='_self'><button class='botao'>Proxima Fase</button></a>";
+                    document.querySelector('#resu').innerHTML = jogo;
+                }
+            }
+
+            function limparCampos() {
+                var inputs = document.querySelectorAll('input[type="number"]');
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].value = '';
+                }
+            }
+        </script>
+    </main>
+</body>
+</html>

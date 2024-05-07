@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body::before {
+    background-image: url("img/code.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.container {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 24px;
+    border: 1px solid #1875E8;
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    background-image: url("img/Ruido.png");
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.container__conteudo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.container__informacoes {
+    flex: 1;
+    padding: 3rem;
+}
+
+.container__botao,
+.container__botaoR,
+.container__botaoP,
+#opcao-voz {
+    border-radius: 16px;
+    padding: 16px 24px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    margin-top: 2rem;
+    cursor: pointer;
+    color: white;
+    background: #1875E8; /* Cor de fundo padrão */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Adicionando uma seta personalizada */
+    background-image: url('sua-imagem-seta.svg');
+    background-repeat: no-repeat;
+    background-position: right 12px center; /* Ajuste a posição conforme necessário */
+    /* Estilos adicionais */
+    padding-right: 30px; /* Adicione espaço para a seta */
+    border-radius: 16px; /* Garante que o seletor tenha bordas arredondadas */
+}
+
+.container__botao,
+.container__botaoR,
+.container__botaoP,
+#opcao-voz:hover {
+    background: #1354A5;
+}
+
+.container__botao,
+.container__botaoR,
+.container__botaoP,
+#opcao-voz:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 2, 3, 0.4);
+}
+
+.container__botao{
+   background-color: blue;
+}
+
+.container__botaoR{
+    background-color: red;
+}
+.container__botaoP{
+    background-color: green;
+
+}
+.tentativa {
+    color: gold;
+}
+
+.chute {
+    color: red;
+}
+
+.container__texto {
+    margin: 16px 0 16px 0;
+}
+
+.container__texto-azul {
+    color: #1875E8;
+}
+
+.container__input {
+    width: 100%;
+    height: 72px;
+    border-radius: 16px;
+    background-color: #FFF;
+    border: none;
+    color: #1875E8;
+    padding: 2rem;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.container__botoes {
+    display: flex;
+    gap: 2em;
+}
+
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 72px;
+    padding-bottom: 3rem;
+}
+
+p,
+button {
+    font-family: 'Inter', sans-serif;
+}
+
+.texto__paragrafo {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+button:disabled {
+    background-color: gray;
+}
+
+@media screen and (max-width: 1250px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    .container__botao {
+        font-size: 16px;
+    }
+
+    .texto__paragrafo {
+        font-size: 24px;
+    }
+
+    .container__imagem-pessoa {
+        display: none;
+    }
+
+    .container__conteudo {
+        display: block;
+        position: inherit;
+    }
+
+    .container__informacoes {
+        padding: 1rem
+    }
+}
