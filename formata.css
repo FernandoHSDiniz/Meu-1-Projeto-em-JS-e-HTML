@@ -66,6 +66,8 @@ footer {
 }
 
 /* Estilos da barra de navegação */
+
+
 .tablenav {
   display: flex;
   justify-content: center;
@@ -78,16 +80,14 @@ footer {
   text-align: center; /* Centralizando os itens */
 }
 
-/* Estilos dos itens da barra de navegação */
 .tdnav {
   display: inline-block; /* Permitindo que fiquem lado a lado */
-  padding: center; /* Adicionando espaçamento interno */
+  margin: 0 1cm; /* Adicionando espaçamento lateral */
+  padding: 5px; /* Adicionando espaçamento interno */
 }
 
-/* Estilos dos itens da barra de navegação, exceto o último */
 .tdnav:not(:last-child) {
-  margin-right: 250px;
-  margin-left: 10px; /* Adicionando margem à direita, exceto para o último item */
+  margin-right: 0; /* Removendo a margem direita do último item */
 }
 
 /* Estilos dos links */
